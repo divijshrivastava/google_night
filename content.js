@@ -1,4 +1,4 @@
-    
+  window.onload = ()=>{  
    if(document.location.href.includes("google.com")) {
     console.log("content script is working");
 //    document.querySelector("body").style.background = 'black';
@@ -9,15 +9,44 @@ let inputs = document.querySelectorAll("input");
 
 inputs.forEach(elem => {findAnchors(elem, "#555", "#ccc")})
 cites.forEach(elem => {findAnchors(elem, "#222", "#00aaaa")});
+
+//for search bar.
 document.querySelectorAll(".RNNXgb").forEach(elem => {
     elem.style.borderRadius = "0px";
 })
+
+setTimeout(()=>{
+    //for menu on google homepage.
+
+    let imgs = document.querySelectorAll(".c7cjWc");
+imgs.forEach(elem => {
+    elem.style.background = "none";
+});
+
+let imgs2 = document.querySelectorAll(".fWhgmd");
+imgs2.forEach(elem => {
+    elem.style.background = "none";
+});
+
+let menuTabs = document.querySelector(".gb_Vf");
+if(menuTabs)
+findAnchors(menuTabs, "#aaa", "black");
+menuTabs.addEventListener("click", ()=>{
+
+document.querySelectorAll("li").forEach(elem => {findAnchors(elem, "#555", "#ccc")})
+});
+
+
+}, 1000
+);
+
+
 
 top_nav.forEach(elem => {findAnchors(elem, "#222", "#aaa")});
     findAnchors(top_nav);
 
 function findAnchors (elem, backgroundColor, color) {
-    if(elem.style || elem.style==""){
+    if(elem.localName!="img" && (elem.style || elem.style=="")){
         elem.style.color = color;//"#aaa";
         elem.style.background = backgroundColor;//"#222";
     }
@@ -37,3 +66,4 @@ function findAnchors (elem, backgroundColor, color) {
 
 //imgs.forEach(elem => {elem.style.filter =  "brightness(.8) contrast(1.2)";});
 //let imgs = document.querySelectorAll("img");
+  }
