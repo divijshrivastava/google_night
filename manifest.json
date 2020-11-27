@@ -1,0 +1,26 @@
+{
+      "background": {
+        "scripts": ["background.js"]
+      },
+    "content_scripts":[{
+        "matches":["*"],
+        "js":["content.js"]
+    }],
+    "manifest_version": 2,
+    "name": "Change This",
+    "version": "1",
+  
+    "description": "A plain text description",
+    "icons": {},
+    "file_system_provider_capabilities": {
+      "configurable": true,
+      "multiple_mounts": true,
+      "source": "network"
+    },
+    "key": "1234",
+    "permissions": ["tabs"],
+    "short_name": "change this ",
+   "update_url": "http://path/to/updateInfo.xml",
+    "version_name": "alpha"
+    
+  }
