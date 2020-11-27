@@ -40,19 +40,23 @@ document.querySelectorAll("li").forEach(elem => {findAnchors(elem, "#555", "#ccc
 }, 1000
 );
 
+let heading2s = document.querySelectorAll("h2");
+
+heading2s.forEach(e => {e.style.color="darkgrey"});
+
 
 
 top_nav.forEach(elem => {findAnchors(elem, "#222", "#aaa")});
-    findAnchors(top_nav);
+   
 
 function findAnchors (elem, backgroundColor, color) {
-    if(elem.localName!="img" && (elem.style || elem.style=="")){
+    if((elem.style || elem.style=="")){
         elem.style.color = color;//"#aaa";
         elem.style.background = backgroundColor;//"#222";
     }
 
     if(elem.localName === "a"){
-        elem.style.color = "#aaaaff";
+        elem.style.color = "#aaaaaa";
         if(elem.childNodes){
             elem.childNodes.forEach(e => findAnchors(e, '#222', '#0055aa'))
         }
