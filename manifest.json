@@ -3,14 +3,16 @@
         "scripts": ["background.js"]
       },
     "content_scripts":[{
-        "matches":["*"],
+        "matches":[
+          "<all_urls>"
+        ],
         "js":["content.js"]
     }],
     "manifest_version": 2,
-    "name": "Change This",
+    "name": "Google Night",
     "version": "1",
   
-    "description": "A plain text description",
+    "description": "This put night mode on google.",
     "icons": {},
     "file_system_provider_capabilities": {
       "configurable": true,
@@ -19,8 +21,7 @@
     },
     "key": "1234",
     "permissions": ["tabs"],
-    "short_name": "change this ",
+    "short_name": "google night",
    "update_url": "http://path/to/updateInfo.xml",
     "version_name": "alpha"
-    
   }
