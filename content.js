@@ -1,5 +1,5 @@
   window.onload = ()=>{  
-   if(document.location.href.includes("google.com")) {
+   if(document.location.href.includes("https://www.google.com")||document.location.href.includes("https://www.google.co")) {
     console.log("content script is working");
 //    document.querySelector("body").style.background = 'black';
  //   document.querySelector("body").style.color= 'white';
